@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+</head>
+<body>
+    <div class="hero">
+        <div class="btn-box">
+            <button id="btn1" onclick="openFlight()"><i class="fa fa-plane"></i> FLights</button>
+            <button id="btn2" onclick="openTrain()"><i class="fa fa-train"></i>Trains</button>
+        </div>
+        <div class="content" id="content1">
+            <div class="content-left">
+                <h4 class="mb-4">SEARCH FOR FLIGHTS</h4>
+                <div class="form-group">
+                    <label>Name <sup class="text-danger">*</sup></label>
+                    <input type="text" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" class="form-control" placeholder="ex: yourmail@gmail.com">
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>From <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>Cambodia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>To <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>Indonesia</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Adults <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>01</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Children <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>01</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Travel Class <sup class="text-danger">*</sup></label>
+                    <select class="form-control">
+                        <option value="" selected>Economy class</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Departure On <sup class="text-danger">*</sup></label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Journey type <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>One Way</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 col-md-2">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info btn-lg btn-block" tabindex="4">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-right">
+                <img src="flight.png" alt="Flight">
+            </div>
+        </div>
+
+        <div class="content" id="content2">
+            <div class="content-left">
+                <h4 class="mb-4">SEARCH FOR TRAINS</h4>
+                <div class="form-group">
+                    <label>Name <sup class="text-danger">*</sup></label>
+                    <input type="text" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" class="form-control" placeholder="ex: yourmail@gmail.com">
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>From <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>Cambodia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>To <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>Indonesia</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Adults <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>01</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Children <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>01</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Travel Class <sup class="text-danger">*</sup></label>
+                    <select class="form-control">
+                        <option value="" selected>Economy class</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Departure On <sup class="text-danger">*</sup></label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Journey type <sup class="text-danger">*</sup></label>
+                            <select class="form-control">
+                                <option value="" selected>One Way</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 col-md-2">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info btn-lg btn-block" tabindex="4">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-right">
+                <img src="train.png" alt="Flight">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <script>
+        let content1 = document.getElementById("content1");
+        let content2 = document.getElementById("content2");
+        
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+
+        function openFlight(){
+            content1.style.transform = "translateX(0)";
+            content2.style.transform = "translateX(100%)";
+            btn1.style.color = "#ff7846";
+            btn2.style.color = "#000";
+            content1.style.transitionDelay = "0.3s";
+            content2.style.transitionDelay = "0s";
+        }
+
+        function openTrain(){
+            content1.style.transform = "translateX(100%)";
+            content2.style.transform = "translateX(0)";
+            btn1.style.color = "#000";
+            btn2.style.color = "#ff7846";
+            content1.style.transitionDelay = "0s";
+            content2.style.transitionDelay = "0.3s";
+        }
+    </script>
+    
+</body>
+</html>
