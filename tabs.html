@@ -1,218 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabs</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+    />
+  </head>
+  <body>
     <div class="hero">
-        <div class="btn-box">
-            <button id="btn1" onclick="openFlight()"><i class="fa fa-plane"></i> FLights</button>
-            <button id="btn2" onclick="openTrain()"><i class="fa fa-train"></i>Trains</button>
-        </div>
-        <div class="content" id="content1">
-            <div class="content-left">
-                <h4 class="mb-4">SEARCH FOR FLIGHTS</h4>
-                <div class="form-group">
-                    <label>Name <sup class="text-danger">*</sup></label>
-                    <input type="text" class="form-control" placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label>E-mail</label>
-                    <input type="email" class="form-control" placeholder="ex: yourmail@gmail.com">
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>From <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>Cambodia</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>To <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>Indonesia</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Adults <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>01</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Children <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>01</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Travel Class <sup class="text-danger">*</sup></label>
-                    <select class="form-control">
-                        <option value="" selected>Economy class</option>
-                    </select>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Departure On <sup class="text-danger">*</sup></label>
-                            <input type="date" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Journey type <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>One Way</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-12 col-md-2">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-info btn-lg btn-block" tabindex="4">
-                                Search
-                            </button>
-                        </div>
-                    </div>
-                </div>
+      <div class="btn-box">
+        <button id="btn1" onclick="openFlight()">
+          <i class="fa fa-plane"></i> Flights
+        </button>
+        <button id="btn2" onclick="openTrain()">
+          <i class="fa fa-train"></i>Trains
+        </button>
+      </div>
+      <div class="content" id="content1">
+        <div class="content-left">
+          <h4 class="mb-4">SEARCH FOR FLIGHTS</h4>
+          <div class="form-group">
+            <label>Name <sup class="text-danger">*</sup></label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="ex: yourmail@gmail.com"
+            />
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>From <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="from">
+                  <option value="" selected disabled
+                    >-- Choose origin --</option
+                  >
+                  <option value="Cambodia">Cambodia</option>
+                  <option value="Indonesia">Indonesia</option>
+                </select>
+              </div>
             </div>
-            <div class="content-right">
-                <img src="flight.png" alt="Flight">
+            <div class="col-6">
+              <div class="form-group">
+                <label>To <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="to">
+                  <option value="" selected disabled
+                    >-- Choose destination --</option
+                  >
+                  <option value="Cambodia">Cambodia</option>
+                  <option value="Indonesia">Indonesia</option>
+                </select>
+              </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Adults <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="adults">
+                  <option value="" selected disabled
+                    >-- Choose adults --</option
+                  >
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>Children <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="children">
+                  <option value="" selected disabled
+                    >-- Choose children --</option
+                  >
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Travel Class <sup class="text-danger">*</sup></label>
+            <select class="form-control" id="travel">
+              <option value="" selected disabled
+                >-- Choose travel class --</option
+              >
+              <option value="Economy Class">Economy class</option>
+              <option value="Business Class">Business class</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Departure On <sup class="text-danger">*</sup></label>
+                <input type="date" id="departure" class="form-control" />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>Journey type <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="journey">
+                  <option value="" selected disabled
+                    >-- Choose journey type --</option
+                  >
+                  <option value="One Way">One Way</option>
+                  <option value="Two Way">Two Way</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12 col-md-2">
+              <div class="form-group">
+                <button
+                  type="submit"
+                  onclick="Show()"
+                  class="btn btn-info btn-lg btn-block"
+                  tabindex="4"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="content-right">
+          <img src="flight.png" alt="Flight" />
+        </div>
+      </div>
 
-        <div class="content" id="content2">
-            <div class="content-left">
-                <h4 class="mb-4">SEARCH FOR TRAINS</h4>
-                <div class="form-group">
-                    <label>Name <sup class="text-danger">*</sup></label>
-                    <input type="text" class="form-control" placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label>E-mail</label>
-                    <input type="email" class="form-control" placeholder="ex: yourmail@gmail.com">
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>From <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>Cambodia</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>To <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>Indonesia</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Adults <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>01</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Children <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>01</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Travel Class <sup class="text-danger">*</sup></label>
-                    <select class="form-control">
-                        <option value="" selected>Economy class</option>
-                    </select>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Departure On <sup class="text-danger">*</sup></label>
-                            <input type="date" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Journey type <sup class="text-danger">*</sup></label>
-                            <select class="form-control">
-                                <option value="" selected>One Way</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-12 col-md-2">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-info btn-lg btn-block" tabindex="4">
-                                Search
-                            </button>
-                        </div>
-                    </div>
-                </div>
+      <div class="content" id="content2">
+        <div class="content-left">
+          <h4 class="mb-4">SEARCH FOR TRAINS</h4>
+          <div class="form-group">
+            <label>Name <sup class="text-danger">*</sup></label>
+            <input
+              type="text"
+              id="name_"
+              class="form-control"
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input
+              type="email"
+              id="email_"
+              class="form-control"
+              placeholder="ex: yourmail@gmail.com"
+            />
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>From <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="from_">
+                  <option value="" selected disabled
+                    >-- Choose origin --</option
+                  >
+                  <option value="Cambodia">Cambodia</option>
+                  <option value="Indonesia">Indonesia</option>
+                </select>
+              </div>
             </div>
-            <div class="content-right">
-                <img src="train.png" alt="Flight">
+            <div class="col-6">
+              <div class="form-group">
+                <label>To <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="to_">
+                  <option value="" selected disabled
+                    >-- Choose destination --</option
+                  >
+                  <option value="Cambodia">Cambodia</option>
+                  <option value="Indonesia">Indonesia</option>
+                </select>
+              </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Adults <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="adults_">
+                  <option value="" selected disabled
+                    >-- Choose adults --</option
+                  >
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>Children <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="children_">
+                  <option value="" selected disabled
+                    >-- Choose children --</option
+                  >
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Travel Class <sup class="text-danger">*</sup></label>
+            <select class="form-control" id="travel_">
+              <option value="" selected disabled
+                >-- Choose travel class --</option
+              >
+              <option value="Economy Class">Economy class</option>
+              <option value="Business Class">Business class</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Departure On <sup class="text-danger">*</sup></label>
+                <input type="date" id="departure_" class="form-control" />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>Journey type <sup class="text-danger">*</sup></label>
+                <select class="form-control" id="journey_">
+                  <option value="" selected disabled
+                    >-- Choose journey type --</option
+                  >
+                  <option value="One Way">One Way</option>
+                  <option value="Two Way">Two Way</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12 col-md-2">
+              <div class="form-group">
+                <button
+                  type="submit"
+                  onclick="PopUp()"
+                  class="btn btn-info btn-lg btn-block"
+                  tabindex="4"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="content-right">
+          <img src="train.png" alt="Flight" />
+        </div>
+      </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Result</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <p>Name : <b id="result_name"></b></p>
+            </div>
+            <div>
+              <p>Email : <b id="result_email"></b></p>
+            </div>
+            <div>
+              <p>From : <b id="result_from"></b></p>
+            </div>
+            <div>
+              <p>To : <b id="result_to"></b></p>
+            </div>
+            <div>
+              <p>Adults : <b id="result_adults"></b></p>
+            </div>
+            <div>
+              <p>Children : <b id="result_children"></b></p>
+            </div>
+            <div>
+              <p>Travel Class : <b id="result_travel"></b></p>
+            </div>
+            <div>
+              <p>Departure On : <b id="result_departure"></b></p>
+            </div>
+            <div>
+              <p>Journey Type : <b id="result_journey"></b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
     <script>
-        let content1 = document.getElementById("content1");
-        let content2 = document.getElementById("content2");
-        
-        let btn1 = document.getElementById("btn1");
-        let btn2 = document.getElementById("btn2");
+      let content1 = document.getElementById("content1");
+      let content2 = document.getElementById("content2");
 
-        function openFlight(){
-            content1.style.transform = "translateX(0)";
-            content2.style.transform = "translateX(100%)";
-            btn1.style.color = "#ff7846";
-            btn2.style.color = "#000";
-            content1.style.transitionDelay = "0.3s";
-            content2.style.transitionDelay = "0s";
-        }
+      let btn1 = document.getElementById("btn1");
+      let btn2 = document.getElementById("btn2");
 
-        function openTrain(){
-            content1.style.transform = "translateX(100%)";
-            content2.style.transform = "translateX(0)";
-            btn1.style.color = "#000";
-            btn2.style.color = "#ff7846";
-            content1.style.transitionDelay = "0s";
-            content2.style.transitionDelay = "0.3s";
-        }
+      function openFlight() {
+        content1.style.transform = "translateX(0)";
+        content2.style.transform = "translateX(100%)";
+        btn1.style.color = "#ff7846";
+        btn2.style.color = "#000";
+        content1.style.transitionDelay = "0.3s";
+        content2.style.transitionDelay = "0s";
+      }
+
+      function openTrain() {
+        content1.style.transform = "translateX(100%)";
+        content2.style.transform = "translateX(0)";
+        btn1.style.color = "#000";
+        btn2.style.color = "#ff7846";
+        content1.style.transitionDelay = "0s";
+        content2.style.transitionDelay = "0.3s";
+      }
+
+      function Show() {
+        let name = $("#name").val();
+        let email = $("#email").val();
+        let from = $("#from").val();
+        let to = $("#to").val();
+        let adults = $("#adults").val();
+        let children = $("#children").val();
+        let travel = $("#travel").val();
+        let departure = $("#departure").val();
+        let journey = $("#journey").val();
+
+        $("#result_name").html(name);
+        $("#result_email").html(email);
+        $("#result_from").html(from);
+        $("#result_to").html(to);
+        $("#result_adults").html(adults);
+        $("#result_children").html(children);
+        $("#result_travel").html(travel);
+        $("#result_departure").html(departure);
+        $("#result_journey").html(journey);
+      }
+
+      function PopUp() {
+        let name = $("#name_").val();
+        let email = $("#email_").val();
+        let from = $("#from_").val();
+        let to = $("#to_").val();
+        let adults = $("#adults_").val();
+        let children = $("#children_").val();
+        let travel = $("#travel_").val();
+        let departure = $("#departure_").val();
+        let journey = $("#journey_").val();
+
+        $("#result_name").html(name);
+        $("#result_email").html(email);
+        $("#result_from").html(from);
+        $("#result_to").html(to);
+        $("#result_adults").html(adults);
+        $("#result_children").html(children);
+        $("#result_travel").html(travel);
+        $("#result_departure").html(departure);
+        $("#result_journey").html(journey);
+      }
     </script>
-    
-</body>
+  </body>
 </html>
